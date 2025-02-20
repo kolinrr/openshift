@@ -1,9 +1,9 @@
 oc create serviceaccount pod-reader
 
-oc apply -f role.yaml -n NAMESPACE
+oc apply -f role.yaml -n default
 
-oc create rolebinding pod-reader-binding --role=pod-reader --serviceaccount=NAMESPACE:pod-reader
+oc create rolebinding pod-reader-binding --role=pod-deployment-reader --serviceaccount=default:pod-reader
 
-oc create token pod-reader -n NAMESPACE
+TOKEN=$(oc create token pod-reader -n default)
 
 oc login --token=$TOKEN 

@@ -7,4 +7,3 @@ data:
     [mysqld]
     port=3306
     max_connections=200
-    default_authentication_plugin=mysql_native_password
