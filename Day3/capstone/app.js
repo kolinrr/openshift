@@ -37,15 +37,12 @@ app.get("/", async (req, res) => {
 
     res.setHeader("Content-Type", "application/json");
     res.send(
-      JSON.stringify(
         {
           message: "All Entries from " + capstone,
           replica: replicaId,
           data: rows
         },
-        null,
-        2
-      )
+       )
     );
   } catch (error) {
     res.status(500).json({ error: error.message });
