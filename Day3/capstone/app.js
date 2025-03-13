@@ -41,8 +41,7 @@ app.get("/", async (req, res) => {
           message: "All Entries from " + capstone,
           replica: replicaId,
           data: rows
-        },
-       )
+        }
     );
   } catch (error) {
     res.status(500).json({ error: error.message });
