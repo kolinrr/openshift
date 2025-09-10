@@ -2,7 +2,7 @@ oc create serviceaccount pod-reader
 
 oc apply -f role.yaml -n NAMESPACE
 
-oc create rolebinding pod-reader-binding --role=pod-reader --serviceaccount=NAMESPACE:pod-reader
+oc create rolebinding pod-reader-binding --role=pod-deployment-reader --serviceaccount=NAMESPACE:pod-reader
 
 oc create token pod-reader -n NAMESPACE
 
